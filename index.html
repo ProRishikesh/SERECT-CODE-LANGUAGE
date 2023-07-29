@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Password Page</title>
+    <script>
+        function checkPassword() {
+            var enteredPassword = document.getElementById("passwordInput").value;
+            var correctPassword = "I wont say the password"; // I Locked the password so You can't see in inspect or anywhere hahahahahahaha
+
+            if (enteredPassword === correctPassword) {
+                window.location.href = "index2.html";
+            } else {
+                document.getElementById("message").innerText = "Incorrect password.";
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 100px;
+            background-color: aquamarine;
+        }
+        input[type="password"] {
+            width: 200px;
+            padding: 8px;
+            font-size: 16px;
+        }
+        button {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #message {
+            color: red;
+            margin-top: 10px;
+        }
+        #lol {
+            margin-top: 280px;
+            margin-left: 1350px;
+            color:forestgreen;
+        }
+    </style>
+</head>
+<body>
+    <h1>Enter Password</h1>
+    <input type="password" id="passwordInput" placeholder="Enter your password">
+    <br>
+    <button onclick="checkPassword()">Submit</button>
+    <p id="message"></p>
+    <br><br><br><br><br><br>
+    <h3 id="lol">CREATED BY CRAZY ROBOTS</h3>
+</body>
+</html>

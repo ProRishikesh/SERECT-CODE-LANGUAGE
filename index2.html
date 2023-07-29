@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Base36 Encoder/Decoder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Base36 Encoder/Decoder</h1>
+    <button id="exit" onclick="exit()">EXIT</button>
+    <label for="input-text">Enter text to encode/decode:</label>
+    <input type="text" id="input-text"><br><br>
+    <button onclick="encodeText()">decimal to Base 36</button><br><br>
+    <button onclick="decodeText()">Base 36 to decimal</button>
+    <br><br><br>
+    <p id="result">Result will appear here</p>
+    <h3 id="lol">CREATED BY CRAZY ROBOTS</h3>
+
+    <script>
+        function encodeText() {
+            var inputText = document.getElementById('input-text').value;
+            var encodedText = base36Encode(inputText);
+            document.getElementById('result').innerText = `<br>Encoded: ${encodedText}`;
+        }
+
+        function decodeText() {
+            var inputText = document.getElementById('input-text').value;
+            var decodedText = base36Decode(inputText);
+            document.getElementById('result').innerText = `<br>Decoded: ${decodedText}`;
+        }
+
+        function base36Encode(input) {
+            return parseInt(input, 10).toString(36);
+        }
+
+        function base36Decode(input) {
+            return parseInt(input, 36).toString();
+        }
+
+        function exit() {
+            window.location.href = "index.html";
+        }
+    </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: aqua;
+            text-align: center;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"] {
+            width: 300px;
+            padding: 5px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #result {
+            margin-top: 10px;
+            font-size: 18px;
+        }
+
+        #exit {
+            background-color: crimson;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 10px;
+            margin-left: 1300px;
+
+        }
+
+        #lol {
+            margin-top: 300px;
+            margin-left: 1340px;
+            color: forestgreen;
+        }
+    </style>
+</body></html>
